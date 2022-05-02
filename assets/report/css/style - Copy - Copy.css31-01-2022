@@ -1,0 +1,565 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* ================================ common css ============================================== */
+
+:root {
+  /* --box-shadow: #f1f1f1; */
+  --primary-color: #068a01;
+  --secondary-color: #09355c;
+  --heading-color: #222;
+  --address-color: #969696;
+}
+
+.darry-master-wrapper {
+  padding-bottom: 3rem;
+  font-family: "Roboto", sans-serif;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.paper-trail-investment-body,
+.three-box-section-body,
+.trade-payment-dashboard-body,
+.trade-information-body,
+.credit-extended-payments-body {
+  margin-top: 8rem;
+}
+
+.custom-box-shadow {
+  /* box-shadow: 0rem 0rem 6rem 2rem var(--box-shadow); */
+  box-shadow: 0rem 0.4rem 7.2rem rgba(0, 0, 0, 0.07);
+  padding: 2.5rem 1.5rem;
+}
+
+.heading {
+  color: var(--heading-color);
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 0 !important;
+}
+
+/* ==================================== paper trail investment body ================================== */
+
+.user-id {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+.paper-trail-investment {
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 0rem 0.4rem 7.2rem rgba(0, 0, 0, 0.07);
+  padding: 3.5rem 1.5rem;
+}
+.three-div-score {
+  margin-bottom: 6.5rem;
+}
+.paper-trail-value {
+  color: var(--primary-color);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.paper-trail-key {
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.btn {
+  color: #fff;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+.btn:hover {
+  color: #fff;
+}
+.download-btn {
+  margin-right: 2.5rem;
+}
+.request-btn {
+  margin-left: 2.5rem;
+}
+.download-btn-bg-color {
+  background: var(--primary-color);
+}
+.request-btn-bg-color {
+  background-color: var(--secondary-color);
+}
+
+/* ---------------- payment chart -------------- */
+
+.trend-heading {
+  color: var(--heading-color);
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0 !important;
+}
+
+.payment-trend-doughnut-chart,
+.Inquiries-trend-doughnut-chart {
+  border-radius: 2rem;
+}
+
+.trend-chart {
+  width: 18rem;
+  height: 9rem;
+  margin: 1rem auto 0;
+}
+
+/* ========================== three box section body ========================================= */
+
+/* ----------- key information ----------------- */
+
+.key-information-box {
+  border-radius: 1.4rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0 !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+li {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.key-information-mr-class {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.score-list {
+  padding-right: 1rem;
+}
+.payment-data-list {
+  border-left: 0.1rem solid var(--address-color);
+  border-right: 0.1rem solid var(--address-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.inquiries-list {
+  padding-left: 1rem;
+}
+.key-information-key {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.key-information-value {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* ------------ contact information ---------------- */
+
+.contact-information {
+  border-radius: 1.4rem;
+}
+
+.contact-information-key {
+  color: var(--secondary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.contact-information-value {
+  color: var(--address-color);
+  font-size: 1.03rem;
+}
+.other-address {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.address {
+  margin-top: 2rem;
+}
+.map-icon {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.map-icon span {
+  margin-right: 1rem;
+  color: var(--address-color);
+}
+.contact-information-mr-class {
+  margin-top: 3.4rem;
+  margin-bottom: 3.4rem;
+}
+.corporate-primary-address {
+  margin-bottom: 2rem;
+}
+.address-mr-bottom {
+  margin-bottom: 0.4rem;
+}
+/* >>>>>>>>>>>>>>>>>>>>>> score history <<<<<<<<<<<< */
+
+.score-history-line-chart {
+  border-radius: 1.4rem;
+}
+.current-score {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.first-score-history-color-box {
+  background-color: #26da20;
+}
+.second-score-history-color-box {
+  background-color: #ffbd14;
+}
+.third-score-history-color-box {
+  background-color: #31e6ff;
+}
+.score-history-label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+/* ========================================= trade payment dashboard body ================================== */
+
+.trade-payment-dashboard-key {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.trade-payment-dashboard-value {
+  color: var(--heading-color);
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem;
+}
+.dashboard-border-box {
+  border: 0.1rem solid var(--primary-color);
+  padding: 1.5rem 0rem;
+  border-radius: 1rem;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-gap {
+  --bs-gutter-x: 0.7rem;
+}
+
+.dashboard-chart-gap {
+  --bs-gutter-x: 0rem;
+}
+
+.dashboard-chart {
+  height: 6rem;
+  display: inline-block !important;
+}
+
+.trade-payment-dashboard-chart-key {
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* ======================= trade payment information & historical trade information body ========================= */
+
+/* --------------- trade payment information -------------- */
+
+.trade-payment-information {
+  border-radius: 2rem;
+}
+
+.trade-payment-information-key {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.trade-payment-information-value {
+  color: var(--address-color);
+  font-size: 1.4rem;
+}
+.trade-payment-information-total-value {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.hr-line {
+  border-bottom: 0.1rem solid #96969682;
+  padding-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* ---------------- historical trade information --------------- */
+
+.historical-trade-information-bar-chart {
+  border-radius: 2rem;
+}
+
+.interval-color-box {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.2rem;
+  transform: rotate(45deg);
+  margin-right: 1rem;
+}
+.first-historical-color-box {
+  background-color: #ffbd14;
+}
+.second-historical-color-box {
+  background-color: #09ce02;
+}
+.third-historical-color-box {
+  background-color: #3c9339;
+}
+.forth-historical-color-box {
+  background-color: #31e6ff;
+}
+.fifth-historical-color-box {
+  background-color: #d0d401;
+}
+.six-historical-color-box {
+  background-color: #fa6767;
+}
+.historical-label {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+/* ======================================== credit extended payments body ============================== */
+
+.credit-extended-payments-body {
+  margin: initial auto;
+  border-radius: 2rem;
+}
+.credit-extended-key {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.4rem;
+  min-width: 10rem;
+  text-align: center;
+}
+.credit-extended-value {
+  color: var(--address-color);
+  font-size: 1.3rem;
+  min-width: 10rem;
+  text-align: center;
+}
+.currency {
+  color: var(--address-color);
+  font-size: 1.3rem;
+}
+.credit-box-height {
+  height: 3.9rem;
+}
+
+/* ========================= equal height style ================================== */
+/* 
+.trade-payment-information{
+  padding-bottom: 8rem;
+} */
+
+
+
+/* ================================================ media quries ================================ */
+
+
+@media screen and (min-width: 3500px) {
+  html{
+    font-size: 156.25%;
+  }
+}
+
+@media screen and (min-width: 3150px) and (max-width: 3499px) {
+  html{
+    font-size: 140.625%;
+  }
+}
+
+@media screen and (min-width: 2800px) and (max-width: 3149px) {
+  html{
+    font-size: 125%;
+  }
+}
+
+@media screen and (min-width: 2450px) and (max-width: 2799px) {
+  html{
+    font-size: 109.375%;
+  }
+}
+
+@media screen and (min-width: 2100px) and (max-width: 2449px) {
+  html{
+    font-size: 93.75%;
+  }
+}
+
+@media screen and (min-width: 1750px) and (max-width: 2099px) {
+  html{
+    font-size: 78.125%;
+  }
+}
+
+/* @media screen and (min-width: 1600px) {
+  .custom-container {
+    max-width: 85%;
+  }
+} */
+
+@media screen and (max-width: 1199px) {
+  /* .score-history-line-chart {
+    margin-top: 3rem;
+  } */
+  .historical-interval-label {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  /* .historical-trade-information-bar-chart {
+    margin-top: 3rem;
+  } */
+  .dashboard-chart-gap{
+    height: 190px;
+    margin-top: 1.5rem;
+    gap: 2rem;
+  }
+  .trade-payment-dashboard-chart-key{
+    text-align: center;
+  }
+  .responsive-mr-top{
+    margin-top: 1rem;
+  }
+  .dashboard-chart{
+    height: 8.0rem !important;
+    width: 16rem !important;
+  }
+  .box-gap{
+    margin-top: 2rem;
+  }
+  .interval-color-box{
+    margin-left: initial;
+  }
+  .score-history-interval-label{
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 1199px) {
+  .trade-payment-dashboard-key{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+.darry-master-wrapper {
+  max-width: 95%;
+ }
+}
+
+@media screen and (max-width: 991px) {
+}
+
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 55%;
+  }
+  .Inquiries-trend-doughnut-chart,
+  .payment-trend-doughnut-chart {
+    margin-top: 3.5rem;
+  }
+  /* .darry-master-wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+  } */
+  .dashboard-chart-gap{
+    height: initial;
+    flex-direction: row;
+    gap: initial;
+    margin-top: 1rem;
+  }
+  .box-gap{
+    margin-top: 1.3rem;
+  }
+  .trade-payment-dashboard-value{
+    text-align: end;
+  }
+  .trade-payment-dashboard-chart-key{
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 50%;
+  }
+  .paper-trail-investment {
+    display: flex;
+    /* justify-content: space-between; */
+  }
+  .three-div-score {
+    margin-bottom: 0;
+    gap: 3.5rem;
+    flex: 1;
+  }
+  .three-div-score-second-data {
+    gap: 3.5rem;
+    flex: 1;
+  }
+  .download-btn {
+    margin-right: 1.5rem;
+  }
+  .request-btn {
+    margin-left: 1.5rem;
+  }
+  .credit-extended-box {
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .credit-box-height {
+    height: initial;
+  }
+  .credit-box {
+    flex-direction: column;
+  }
+  .contact-information {
+    margin-top: 3rem;
+  }
+  .third-box-mr-top{
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 40%;
+  }
+  .download-btn {
+    margin-right: 1rem;
+  }
+  .request-btn {
+    margin-left: 1rem;
+  }
+}

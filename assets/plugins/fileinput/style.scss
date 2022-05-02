@@ -1,0 +1,581 @@
+// Size
+@mixin size($width : auto, $height : auto) {
+    height: $height;
+    width: $width;
+}
+@mixin square($size) {
+    @include size($size, $size);
+}
+
+@mixin circle($size) {
+    @include border-radius($size);
+    @include size($size, $size);
+}
+
+// Sprite
+@mixin sprite($left : 0, $top : 0 , $color : transparent) {
+    background: $color url(img/sprite.png) $left $top no-repeat;
+    display: block;
+}
+
+// Font Stacks
+@mixin font($weight: normal, $size: 16px, $lineHeight: 24px) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+}
+@mixin font-open($weight: normal, $size: 16px, $lineHeight: 24px) {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+}
+
+
+
+// Border Radius
+@mixin border-radius($radius: 5px) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+}
+
+// Gradients
+@mixin gradient-horizontal ($startColor: #555, $endColor: #333) {
+    background-color: $endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, right top, from($startColor), to($endColor)); // Konqueror
+    background-image: -moz-linear-gradient(left, $startColor, $endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(left, $startColor, $endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $startColor), color-stop(100%, $endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(left, $startColor, $endColor); // Opera 11.10
+    background-image: linear-gradient(to right, $startColor, $endColor); // Le standard
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$startColor}, endColorstr=#{$endColor}, GradientType=1); // IE9 and down
+}
+@mixin gradient-vertical ($startColor: #555, $endColor: #333) {
+    background-color: $endColor;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from($startColor), to($endColor)); // Konqueror
+    background-image: -moz-linear-gradient(top, $startColor, $endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, $startColor, $endColor); // IE10
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $startColor), color-stop(100%, $endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
+    background-image: linear-gradient(to bottom, $startColor, $endColor); // The standard
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$startColor}, endColorstr=#{$endColor}, GradientType=0); // IE9 and down
+}
+@mixin gradient-directional ($startColor: #555, $endColor: #333, $deg: 45deg) {
+    background-color: $endColor;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient($deg, $startColor, $endColor); // FF 3.6+
+    background-image: -ms-linear-gradient($deg, $startColor, $endColor); // IE10
+    background-image: -webkit-linear-gradient($deg, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient($deg, $startColor, $endColor); // Opera 11.10
+    background-image: linear-gradient($deg, $startColor, $endColor); // The standard
+}
+@mixin gradient-vertical-three-colors($startColor: #00b3ee, $midColor: #7a43b6, $colorStop: 50%, $endColor: #c3325f) {
+    background-color: $endColor;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), color-stop($colorStop, $midColor), to($endColor));
+    background-image: -webkit-linear-gradient($startColor, $midColor $colorStop, $endColor);
+    background-image: -moz-linear-gradient(top, $startColor, $midColor $colorStop, $endColor);
+    background-image: -ms-linear-gradient($startColor, $midColor $colorStop, $endColor);
+    background-image: -o-linear-gradient($startColor, $midColor $colorStop, $endColor);
+    background-image: linear-gradient($startColor, $midColor $colorStop, $endColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$startColor}, endColorstr=#{$endColor}, GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+// Transitions
+@mixin transition($transition...) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+}
+
+// Transform
+@mixin transform($transform) {
+    transform: $transform;
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+}
+
+@mixin transform-origin($origin) {
+    transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -o-transform-origin: $origin;
+}
+
+@mixin absolute-center($axis: "both"){
+    position:absolute;
+    @if $axis == "y" {
+        top: 50%;
+        @include transform(translateY(-50%));
+    }
+    @if $axis == "x" {
+        left: 50%;
+        @include transform(translateX(-50%));
+    }
+    @if $axis == "both" {
+        top:50%;
+        left:50%;
+        @include transform(translate(-50%, -50%));
+    }
+}
+
+//letter-spacing
+@mixin letter-spacing($font-size, $letterspacing) {
+    letter-spacing: (($font-size * $letterspacing) /1000) + px;
+}
+
+// Input placeholder text
+@mixin placeholder($color: $grayLight) {
+    :-moz-placeholder {
+        color: $color;
+    }
+    ::-webkit-input-placeholder {
+        color: $color;
+    }
+}
+
+// Opacity
+@mixin opacity($alpha: 1) {
+    $percent: $alpha * 100;
+
+    opacity: $alpha;
+    -ms-filter: alpha(opacity=$percent);;
+    filter: alpha(opacity=$percent);
+}
+
+@mixin hide-text() {
+    font: #{0/0} a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+@mixin gradient-text($gradient, $bg : 'light') {
+    @supports(mix-blend-mode: lighten) {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+
+            background: unquote($gradient);
+            pointer-events: none;
+        }
+
+        @if ($bg == 'light') {
+            color: #000;
+            background: #fff;
+            mix-blend-mode: multiply;
+
+            &::before {
+                mix-blend-mode: screen;
+            }
+        } @else {
+            color: #fff;
+            background: #000;
+            mix-blend-mode: lighten;
+
+            &::before {
+                mix-blend-mode: multiply;
+            }
+        }
+    }
+}
+
+$fe_border: #ccc;
+$fe_background: #eee;
+$fe_primary: #666;
+$fe_error: #FF4D4D;
+
+$fe_lineheight: 36px;
+
+*{
+    box-sizing: border-box;
+}
+body{
+    @include font-open();
+}
+//========================================================
+// FORMS
+//========================================================
+
+.form-element {
+    @include size(100%, auto);
+    margin: 0 0 25px;
+    position: relative;
+
+    .form-element-label{
+        display: block;
+    }
+    input[type="text"],
+    input[type="radio"],
+    input[type="checkbox"],
+    input[type="password"],
+    input[type="email"],
+    input[type="submit"] {
+        @include size(100%, $fe_lineheight);
+        border-radius: 2px;
+        @include placeholder(lighten(#454545, 25%));
+        color: #454545;
+        display: block;
+        border: 1px solid $fe_border;
+        padding: 0 12px 0;
+        background-color: $fe_background;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+    }
+    select {
+        @include size(100%, $fe_lineheight);
+        border-radius: 2px;
+        color: #454545;
+        border: 1px solid $fe_border;
+        padding-left: 10px;
+        padding-right: 20px;
+        margin: 0 0 0;
+        background-color: $fe_background;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+    }
+    textarea{
+        border: 1px solid $fe_border;
+        border-radius: 2px;
+        @include placeholder(lighten(#454545, 25%));
+        height: 110px;
+        width: 100%;
+        padding: 6px 12px;
+        resize: vertical;
+        background-color: $fe_background;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+    }
+    input, textarea, select{
+        @include transition(background-color .1s ease, border-color .1s ease);
+
+        &:focus{
+            background-color: lighten($fe_background, 3%);
+            border-color: darken($fe_border, 5%);
+            outline: none;
+        }
+    }
+
+    //========================================================
+    // INPUT RADIO NORMAUX
+    //========================================================
+
+    input[type="radio"] {
+        display:none;
+        &.error {
+            @include placeholder(red);
+        }
+    }
+    input[type="radio"] ~ span.radio-btn {
+        background-color: $fe_background;
+        border: 1px solid $fe_border;
+        vertical-align: middle;
+        display:inline-block;
+        margin: 0 5px 0 0;
+        position: relative;
+        @include circle(20px);
+        //@include sprite(7, 8, 16px, 16px);
+
+        &:before{
+            background: $fe_primary;
+            content: "";
+            @include absolute-center();
+            @include circle(10px);
+            @include transform-origin(50% 50%);
+            @include transform(translate(-50%, -50%) scale(0));
+            @include transition(all .1s ease);
+        }
+    }
+    input[type="radio"] ~ span.text {
+        margin: 0 10px 0 0;
+        vertical-align: middle;
+    }
+    input[type="radio"]:checked ~ span.radio-btn {
+        //@include sprite(7, 6, 16px, 16px);
+
+        &:before{
+            @include transform(translate(-50%, -50%) scale(1));
+        }
+    }
+    input[type="radio"]:checked ~ span.text {
+    }
+
+    //========================================================
+    // Custom Radio
+    //========================================================
+
+    input[type="radio"].custom-radio {
+        display:none;
+    }
+    input[type="radio"].custom-radio ~ span.text {
+        vertical-align: middle;
+    }
+    input[type="radio"].custom-radio ~ span.radio-btn {
+        vertical-align: middle;
+        display:inline-block;
+        margin: 0 14px 0 0;
+        //@include retina-sprite($sprite-input-radio-group);
+    }
+    input[type="radio"].custom-radio:checked ~ span.text {
+    }
+    input[type="radio"].custom-radio:checked ~ span.radio-btn {
+        //@include retina-sprite($sprite-input-radio-group);
+    }
+
+    //========================================================
+    // Custom Checkbox
+    //========================================================
+
+    input[type="checkbox"].custom-checkbox {
+        //display:none;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        //visibility: hidden;
+        @include size(0, 0);
+
+        &:focus + label span.checkbox-btn{
+            background-color: lighten($fe_background, 3%);
+            border-color: darken($fe_border, 5%);
+        }
+    }
+    input[type="checkbox"].custom-checkbox ~ span.text {
+        vertical-align: middle;
+    }
+    input[type="checkbox"].custom-checkbox ~ span.checkbox-btn {
+        border-radius: 2px;
+        background-color: $fe_background;
+        border: 1px solid $fe_border;
+        vertical-align: middle;
+        display:inline-block;
+        margin: 0 10px 0 0;
+        position: relative;
+        @include square(20px);
+
+        svg{
+            @include absolute-center();
+            @include size(16px, 16px);
+
+            path{
+                fill: $fe_primary;
+                @include transform-origin(50% 50%);
+                @include transform(scale(0));
+                @include transition(all .1s ease);
+            }
+        }
+    }
+    input[type="checkbox"].custom-checkbox:checked ~ span.text {
+    }
+    input[type="checkbox"].custom-checkbox:checked ~ span.checkbox-btn {
+        svg path{
+            @include transform(scale(1));
+        }
+    }
+
+    //========================================================
+    // CUSTOM SELECT
+    //========================================================
+
+    .form-element-dropdown{
+        position: relative;
+
+        &.active{
+            a{
+                background-color: lighten($fe_background, 3%);
+                border-color: darken($fe_border, 5%);
+            }
+            ul{
+                display: block;
+            }
+        }
+        a{
+            @include size(100%, $fe_lineheight);
+            border-radius: 2px;
+            color: #454545;
+            cursor: default;
+            display: inline-block;
+            //text-transform: uppercase;
+            border: 1px solid $fe_border;
+            padding-left: 15px;
+            padding-right: 20px;
+            line-height: 32px;
+            position: relative;
+            text-decoration: none;
+            background-color: $fe_background;
+            @include transition(background-color .1s ease, border-color .1s ease);
+
+            &:after{
+                border: 5px solid transparent;
+                border-top-color: $fe_primary;
+                content: "";
+                margin-top: -2px;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                @include size(0, 0);
+            }
+        }
+        ul{
+            background-color: $fe_background;
+            border: 1px solid $fe_border;
+            border-radius: 2px;
+            display: none;
+            left: 0;
+            list-style: none;
+            margin: 0;
+            min-width: 100%;
+            overflow-y: auto;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            z-index: 1;
+
+            li{
+                padding: 0 15px;
+
+                &:hover{
+                    background-color: lighten($fe_background, 3%);
+                }
+                &.selected{
+                  display: none;
+                }
+            }
+        }
+    }
+
+    //========================================================
+    // INPUT FILE
+    //========================================================
+
+    input[type="file"].input-file-hidden{
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    input[type="file"] + .form-element-inputfile{
+        @include size(100%, $fe_lineheight);
+        border-radius: 2px;
+        cursor: pointer;
+        color: #454545;
+        display: block;
+        line-height: 34px;
+        border: 1px solid $fe_border;
+        padding: 0 12px 0 $fe_lineheight;
+        position: relative;
+        background-color: $fe_background;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        @include font-open(400, 14px, $fe_lineheight);
+
+        &:before{
+            background : transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODdGQUFDOTI4MEZCMTFFN0FGNjk5QzI1NzJBREMzRjIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODdGQUFDOTM4MEZCMTFFN0FGNjk5QzI1NzJBREMzRjIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4N0ZBQUM5MDgwRkIxMUU3QUY2OTlDMjU3MkFEQzNGMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4N0ZBQUM5MTgwRkIxMUU3QUY2OTlDMjU3MkFEQzNGMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhhTqOIAAAKySURBVHja7JpPSJRBGMbX0tCDhPgHybOipGaglomIFwU9Ch3Di25EdCjyqnXoIh5EolY6dE2EDnrwz030IiJKB4VKDx6sQM1CChPW54VX+PhwW3e+71vnW58HHoYdvpmd/e3MO+/MblY8Ho9QiXWFCAiIgAiIgAiIgAiIgCgCIiACIiACIiACIiCKgAiIgAiIgEKh7IseQDQadVeVwrXwdVh+k9qG1+C/Z7WPxWKZDcihBrgHboOrHPW/4U/wR/gd/POyLbFceAxegh+54Ijy4XvwEPwZfnhpAGF5laBYhnvP2aQIfgO/zXhAgCPLewG+adIcHsn0GfQeLvfQ/gncFfQgs4L+8wJmiuxGj+F2uERjzQb8yofuv8E3sJMF9iGyA4ZTj2JSt+5TVfr4FtJvNzwRuiUGOIUo5l1wgtD9sMagZ3BeGmLZrdABwuypRvEgTcG+IFRBGnBea8Jnqj8pzrx/8LDmUwsI2N+tBOTIa+546GYG7tPMusOg/aEkkoD03EZAUx7zEtn+m+Fj3V0X4UbDvlbhVoD6ZUUMApwuj3DktN6icCJatmi9iergaZuCdL+Htus6c45c9Udav27YbxO+uB5bADUZtttSCIf/iSnN+pyJntoCKMegzSZ8G95P8ty+LplNg/eoCeth9YvMDATRg3M+L8FW7oS+pnugF3WjKHnOOGJEsb6e09O5W6O63ctW+yNNmXkggDZSPISWqU+VKLmrdlyJVBgmnVYssTGP7XcT1O957HfWFkCyFHYi9mnQCkAItpLYdWqssEUvMK5Va3YxHcxd3aFS1bUU65PpJcYz6Mfn8nWbx6DkPFWlmfWK4+iQTFd9GJ9cv36QIwrGMWDtdUemib/NExABERABERABERABUQREQAREQAREQAREQBQBERABERABhUMnAgwAeTmWxmxR2bsAAAAASUVORK5CYII=') 0 0 / 36px 36px no-repeat;
+            content: "";
+            left: 0;
+            @include absolute-center('y');
+            @include square($fe_lineheight);
+        }
+        &.form-element-inputfile-filled{
+            .form-element-inputfile-reset{
+                display: block;
+            }
+        }
+        span{
+            display: block;
+            margin-right: $fe_lineheight;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .form-element-inputfile-reset{
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include square($fe_lineheight);
+
+            &:before,
+            &:after{
+                background-color: $fe_primary;;
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform-origin: 50% 50%;
+                @include size(12px, 2px);
+            }
+            &:before{
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:after{
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+
+    //========================================================
+    // INPUT ERROR
+    //========================================================
+
+    .form-element-error {
+        color: $fe_error;
+        display: none;
+    }
+    &.error {
+        .form-element-error {
+            display: block;
+            //float: right;
+            //margin: 30px 0 5px;
+        }
+        input[type="checkbox"],
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea,
+        span.radio-btn,
+        select,
+        input[type="file"] + label{
+            background-color: lighten($fe_error, 30%);
+            border: 1px solid $fe_error;
+            color: $fe_error;
+        }
+    }
+}

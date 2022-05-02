@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FormElements jQuery Plugin Demos</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 24px;
+            max-width: 960px;
+            margin: 150px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jquery-script-menu">
+        <div class="jquery-script-center">
+            <ul>
+                <li><a href="https://www.jqueryscript.net/form/Custom-jQuery-Form-Elements.html">Download This
+                        Plugin</a></li>
+                <li><a href="https://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+            </ul>
+            <div class="jquery-script-ads">
+                <script type="text/javascript">< !--
+                        google_ad_client = "ca-pub-2783044520727903";
+                    /* jQuery_demo */
+                    google_ad_slot = "2780937993";
+                    google_ad_width = 728;
+                    google_ad_height = 90;
+//-->
+                </script>
+                <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+            </div>
+            <div class="jquery-script-clear"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>FormElements jQuery Plugin Demos</h1>
+
+        <form action="#" method="post" enctype='multipart/form-data'>
+
+            <!-- input text -->
+            <div class="form-element">
+                <label class="form-element-label" for="input-id">Text</label>
+                <input id="input-id" class="" type="text" name="" value="" title="" aria-label=""
+                    placeholder="Placeholder" autocorrect="off" spellcheck="false" tabindex="1" />
+                <span class="form-element-error">Error</span>
+            </div>
+
+            <!-- input custom checkbox -->
+            <div class="form-element">
+                <label class="form-element-label" for="checkbox-name-1">Checkbox</label>
+                <div class="form-element-error">Error</div>
+
+                <label for="checkbox-name-1">
+                    <input id="checkbox-name-1" class="custom-checkbox" type="checkbox" value="" tabindex="2" />
+                    <span class="text">check me out</span>
+                </label>
+            </div>
+
+            <!-- text area -->
+            <div class="form-element">
+                <label class="form-element-label" for="input-id">Textarea</label>
+                <div class="form-element-error">Error</div>
+                <textarea id="input-id" class="" name="" rows="" value="" cols="" placeholder="" autocorrect="off"
+                    spellcheck="false" tabindex="3"></textarea>
+            </div>
+
+            <!-- radio button custom -->
+            <div class="form-element">
+                <div class="form-element-label">Radio button</div>
+
+                <label for="input_1">
+                    <input id="input_1" class="custom-radio" type="radio" name="input_agent" value="" checked="checked"
+                        tabindex="" />
+                    <span class="text">yep</span>
+                </label>
+
+                <label for="input_2">
+                    <input id="input_2" class="custom-radio" type="radio" name="input_agent" value="" tabindex="" />
+                    <span class="text">nope</span>
+                </label>
+            </div>
+
+            <!-- select -->
+            <div class="form-element">
+                <div class="form-element-label" for="select1">Select</div>
+                <div class="form-element-error">Error</div>
+                <select id="select1" class="" name="" tabindex="">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+
+            <!-- file -->
+            <div class="form-element">
+                <label class="form-element-label" for="input-file">Upload files</label>
+                <div class="form-element-error">Error</div>
+                <input type="file" id="input-file" name="" data-label="Select files"
+                    data-multiple-caption="{n} files selected" multiple />
+            </div>
+
+            <!-- input submit -->
+            <div class="form-element">
+                <input id="" class="" type="submit" value="Submit" title="submit" tabindex="" />
+            </div>
+        </form>
+    </div>
+    <!-- Import jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery-form-elements.js"></script>
+
+    <script>
+        (function ($) {
+            $('select').dropdown({ maxItems: 5 });
+
+            $('input[type=file]').inputfile();
+
+            $('input[type=checkbox]').customCheckbox();
+
+            $('input[type=radio]').customRadio();
+        })(jQuery);
+    </script>
+</body>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</html>

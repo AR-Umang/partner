@@ -1,0 +1,202 @@
+@media screen and (max-width: 1199px) {
+  /* .score-history-line-chart {
+      margin-top: 3rem;
+    } */
+  .historical-interval-label {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  /* .historical-trade-information-bar-chart {
+      margin-top: 3rem;
+    } */
+  .dashboard-border-box.dashboard-chart-gap {
+    height: 19rem;
+    margin-top: 1.5rem;
+    gap: 2rem;
+  }
+  .trade-payment-dashboard-chart-key {
+    text-align: center;
+  }
+  .responsive-mr-top {
+    margin-top: 1rem;
+  }
+  .dashboard-chart {
+    height: 8rem !important;
+    width: 16rem !important;
+  }
+  .box-gap {
+    margin-top: 2rem;
+  }
+  .interval-color-box {
+    margin-left: initial;
+  }
+  .score-history-interval-label {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .trade-payment-dashboard-key {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .darry-master-wrapper {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 55%;
+  }
+  .Inquiries-trend-doughnut-chart,
+  .payment-trend-doughnut-chart {
+    margin-top: 3.5rem;
+  }
+  /* .darry-master-wrapper {
+      max-width: 95%;
+      margin: 0 auto;
+    } */
+  .dashboard-chart-gap {
+    height: initial;
+    flex-direction: row;
+    gap: initial;
+    margin-top: 1rem;
+  }
+  .box-gap {
+    margin-top: 1.3rem;
+  }
+  .trade-payment-dashboard-value {
+    text-align: center;
+  }
+  /* .trade-payment-dashboard-chart-key{
+      text-align: start;
+    } */
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 50%;
+  }
+  .paper-trail-investment {
+    display: flex;
+    /* justify-content: space-between; */
+  }
+  .three-div-score {
+    margin-bottom: 0;
+    gap: 3.5rem;
+    flex: 1;
+  }
+  .three-div-score-second-data {
+    gap: 3.5rem;
+    flex: 1;
+  }
+  .download-btn {
+    margin-right: 1.5rem;
+  }
+  .request-btn {
+    margin-left: 1.5rem;
+  }
+  .credit-extended-box {
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .credit-box-height {
+    height: initial;
+  }
+  .credit-box {
+    flex-direction: column;
+  }
+  .contact-information {
+    margin-top: 3rem;
+  }
+  .third-box-mr-top {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 45% !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 40%;
+  }
+  .download-btn {
+    margin-right: 1rem;
+  }
+  .request-btn {
+    margin-left: 1rem;
+  }
+}
+
+/* =====================--================= speedometer css start here ==============--======================== */
+
+@media screen and (max-width: 1199px) {
+  .dashboard-speedometer-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dashboard-speedometer-parent .speedo-meter {
+    border-radius: 0;
+  }
+}
+
+/* =====================--================= speedometer css end here ==============--======================== */
+
+@media screen and (max-width: 991px) {
+  .paper-trail-value {
+    font-size: 2.3rem;
+  }
+  .paper-trail-key {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .contact-information {
+    margin-top: 2rem;
+  }
+  .score-history-line-chart {
+    margin-top: 2rem;
+  }
+  .historical-trade-information-bar-chart {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .dashboard-border-box.dashboard-chart-gap {
+    height: 10rem;
+    margin-top: 1.5rem;
+    gap: 0rem;
+  }
+  .trade-payment-dashboard-chart-key {
+    margin-bottom: 1.1rem;
+  }
+  .industry-performance .trade-payment-dashboard-value{
+    flex: 0 0 36%;
+    padding-right: 0;
+  }
+  .industry-performance .trade-payment-dashboard-chart-key{
+    flex: 0 0 40%;
+    padding-left: 0;
+  }
+
+  .cradit-ratio .trade-payment-dashboard-value{
+    flex: 0 0 36%;
+    padding-right: 0;
+  }
+  .cradit-ratio .trade-payment-dashboard-chart-key{
+    flex: 0 0 40%;
+    padding-left: 0;
+  }
+
+}
